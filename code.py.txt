@@ -1,0 +1,29 @@
+import cv2
+
+# Load the cascade
+face_cascade = cv2.CascadeClassifier('C:\\Users\\pc\\Desktop\\haarcascade_frontalface_default.xml')
+
+img = cv2.imread(r'C:\\Users\\pc\\Desktop\\praveensharma.jpg.jpeg')
+
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+face_coordinate=face_cascade.detectMultiScale(gray)
+(x,y,w,h) = face_coordinate[0]
+cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),10)
+(x,y,w,h) = face_coordinate[1]
+cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),10)
+(x,y,w,h) = face_coordinate[2]
+cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),10)
+(x,y,w,h) = face_coordinate[3]
+cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),10)
+(x,y,w,h) = face_coordinate[4]
+cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),10)
+(x,y,w,h) = face_coordinate[5]
+cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),10)
+
+
+
+
+cv2.imshow('praveen',img)
+cv2.waitKey(0)
+print('done')
+
